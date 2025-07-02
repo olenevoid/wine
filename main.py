@@ -6,7 +6,7 @@ from collections import defaultdict
 
 
 FOUNDATION_DATE = datetime(year=1920, month=2, day=11)
-GOODS_FILENAME = 'wine3.xlsx'
+GOODS_FILENAME = 'wine2.xlsx'
 
 
 def get_goods_data():
