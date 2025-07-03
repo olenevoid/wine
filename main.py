@@ -87,7 +87,7 @@ def main():
 
     rendered_page = template.render(
         winery_age=f'{winery_age} {get_ru_year_word(winery_age)}',
-        goods=fetch_products(products_file)
+        products=fetch_products(products_file)
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
