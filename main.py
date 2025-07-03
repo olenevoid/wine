@@ -5,7 +5,7 @@ from pandas import read_excel
 from collections import defaultdict
 
 
-FOUNDATION_DATE = 1920
+FOUNDATION_YEAR = 1920
 GOODS_FILENAME = 'wine.xlsx'
 
 
@@ -55,7 +55,7 @@ def get_ru_year_word(number: int):
 
 def get_winery_age():
     current_year = datetime.now().year
-    years = current_year - FOUNDATION_DATE
+    years = current_year - FOUNDATION_YEAR
     return f'{years} {get_ru_year_word(years)}'
 
 
