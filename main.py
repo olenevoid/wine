@@ -27,6 +27,14 @@ def fetch_products():
 
     return goods
 
+def get_products_for_category(raw_products, category):
+    products = []
+    for product in raw_products:
+        if product['Категория'] == category:
+            products.append(product)
+    
+    return products
+    
 
 def get_ru_year_words():
     # Числа для варианта 'лет'
