@@ -64,6 +64,8 @@ def main():
         autoescape=select_autoescape(['html', 'xml'])
     )
 
+    winery_age = get_winery_age()
+
     template = env.get_template('template.html')
 
     rendered_page = template.render(
