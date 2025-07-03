@@ -4,7 +4,7 @@ from datetime import datetime
 from pandas import read_excel
 from collections import defaultdict
 from dotenv import load_dotenv
-from os import getenv
+from os import getenv, path
 
 
 FOUNDATION_YEAR = 1920
@@ -72,6 +72,9 @@ def get_winery_age():
 def main():
     load_dotenv()
     products_file = getenv('PRODUCTS_FILE', PRODUCTS_FILENAME)
+
+    if not path.exists(products_file):
+        raise FileNotFoundError(f'Файл {products_file} не найден')
     
     env = Environment(
         loader=FileSystemLoader('.'),
