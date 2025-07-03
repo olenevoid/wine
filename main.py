@@ -9,7 +9,7 @@ FOUNDATION_YEAR = 1920
 PRODUCTS_FILENAME = 'wine.xlsx'
 
 
-def get_goods_data():
+def fetch_products():
     excel_data = read_excel(
         PRODUCTS_FILENAME,
         sheet_name='Лист1',
@@ -70,7 +70,7 @@ def main():
 
     rendered_page = template.render(
         winery_age=f'{winery_age} {get_ru_year_word(winery_age)}',
-        goods=get_goods_data()
+        goods=fetch_products()
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
