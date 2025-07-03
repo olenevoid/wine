@@ -1,5 +1,8 @@
 env/
 .vscode/
 .venv
+__pycache__
 
+*.json
 index.html
+helpers.py
