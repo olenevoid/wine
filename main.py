@@ -55,8 +55,7 @@ def get_ru_year_word(number: int):
 
 def get_winery_age():
     current_year = datetime.now().year
-    years = current_year - FOUNDATION_YEAR
-    return f'{years} {get_ru_year_word(years)}'
+    return current_year - FOUNDATION_YEAR
 
 
 def main():
