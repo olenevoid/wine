@@ -15,17 +15,18 @@ def fetch_products():
         sheet_name='Лист1',
         na_values='nan',
         keep_default_na=False
-        )
+    )
 
-    raw_goods = excel_data.to_dict(orient='records')
+    raw_products = excel_data.to_dict(orient='records')
     categories = list(set(excel_data['Категория'].tolist()))
 
-    goods = defaultdict(list)
+    products = defaultdict(list)
     for category in sorted(categories):
 
-        goods[category] = [g for g in raw_goods if g['Категория'] == category]
+        products[category] = get_products_for_category(raw_products, category)
 
-    return goods
+    return products
+
 
 def get_products_for_category(raw_products, category):
     products = []
