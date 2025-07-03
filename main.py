@@ -3,6 +3,8 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from datetime import datetime
 from pandas import read_excel
 from collections import defaultdict
+from dotenv import load_dotenv
+from os import getenv
 
 
 FOUNDATION_YEAR = 1920
@@ -68,6 +70,9 @@ def get_winery_age():
 
 
 def main():
+    load_dotenv()
+    products_file = getenv('PRODUCTS_FILE', PRODUCTS_FILENAME)
+    
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
