@@ -69,7 +69,7 @@ def main():
     template = env.get_template('template.html')
 
     rendered_page = template.render(
-        winery_age=get_winery_age(),
+        winery_age=f'{winery_age} {get_ru_year_word(winery_age)}',
         goods=get_goods_data()
     )
 
