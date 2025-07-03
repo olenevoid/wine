@@ -6,12 +6,12 @@ from collections import defaultdict
 
 
 FOUNDATION_YEAR = 1920
-GOODS_FILENAME = 'wine.xlsx'
+PRODUCTS_FILENAME = 'wine.xlsx'
 
 
 def get_goods_data():
     excel_data = read_excel(
-        GOODS_FILENAME,
+        PRODUCTS_FILENAME,
         sheet_name='Лист1',
         na_values='nan',
         keep_default_na=False
