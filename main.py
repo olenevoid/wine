@@ -9,10 +9,10 @@ FOUNDATION_YEAR = 1920
 PRODUCTS_FILENAME = 'wine.xlsx'
 
 
-def fetch_products():
+def fetch_products(sheet_name = 'Лист1'):
     excel_data = read_excel(
         PRODUCTS_FILENAME,
-        sheet_name='Лист1',
+        sheet_name=sheet_name,
         na_values='nan',
         keep_default_na=False
     )
