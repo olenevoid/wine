@@ -5,7 +5,7 @@ from pandas import read_excel
 from collections import defaultdict
 
 
-FOUNDATION_DATE = datetime(year=1920, month=2, day=11)
+FOUNDATION_DATE = 1920
 GOODS_FILENAME = 'wine.xlsx'
 
 
