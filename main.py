@@ -71,10 +71,10 @@ def get_winery_age():
 
 def main():
     load_dotenv()
-    products_file = getenv('PRODUCTS_FILE', PRODUCTS_FILENAME)
+    products_filepath = getenv('PRODUCTS_FILE', PRODUCTS_FILENAME)
 
-    if not path.exists(products_file):
-        raise FileNotFoundError(f'Файл {products_file} не найден')
+    if not path.exists(products_filepath):
+        raise FileNotFoundError(f'Файл {products_filepath} не найден')
     
     env = Environment(
         loader=FileSystemLoader('.'),
@@ -87,7 +87,7 @@ def main():
 
     rendered_page = template.render(
         winery_age=f'{winery_age} {get_ru_year_word(winery_age)}',
-        products=fetch_products(products_file)
+        products=fetch_products(products_filepath)
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
